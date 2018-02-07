@@ -63,6 +63,8 @@
       if (isset($_GET["status"])) {
         if ($_GET["status"] == "succes") {
           echo "<script src='./js/registerform/succes.js'></script>";
+        } else if ($_GET["status"] == "emailexists") {
+          echo "<script src='./js/registerform/emailexists'></script>";
         }
       }
     ?>
