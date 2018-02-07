@@ -5,6 +5,7 @@ $(document).ready(function() {
   $("#exampleModalCenter").modal('show');
 
   setTimeout(function () {
-    alert("3 seconden verstreken");
+    $("#exampleModalCenter").modal('hide');
+    window.location.replace("./index.php");
   }, 3000);
 });
