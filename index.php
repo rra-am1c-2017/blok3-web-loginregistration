@@ -39,7 +39,7 @@
                   </div>
                   <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name="conditions">
-                    <label class="form-check-label" for="exampleCheck1">Ik ga akkoord met de algemene voorwaarden</label>
+                    <label id="lblcheck" class="form-check-label" for="exampleCheck1">Ik ga akkoord met de algemene voorwaarden</label>
                   </div>
                   
                 
@@ -64,8 +64,12 @@
         if ($_GET["status"] == "succes") {
           echo "<script src='./js/registerform/succes.js'></script>";
         } else if ($_GET["status"] == "emailexists") {
-          echo "<script src='./js/registerform/emailexists'></script>";
-        }
+          echo "<script src='./js/registerform/emailexists.js'></script>";
+        } else if ($_GET["status"] == "nocheck") {
+          echo "<script src='./js/registerform/nocheck.js'></script>";
+        } else if ($_GET["status"] == "emailempty") {
+          echo "<script src='./js/registerform/emailempty.js'></script>";
+        } 
       }
     ?>
   </body>
