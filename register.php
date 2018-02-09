@@ -36,6 +36,10 @@
         //echo $sql; exit();  
         // We vuren de query af op de database
         mysqli_query($conn, $sql);
+
+        // We sturen nu een mailtje
+        mail("adruijter@gmail.com", "Mijn eerste email", "Hallo Wereld!, Dit is mijn eerste mailtje");
+
         // Stuur de gebruiker door naar index.php
         header("Location: ./index.php?status=succes");
       }
