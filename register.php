@@ -39,10 +39,30 @@
 
         $subject = "Registratie dyslexie.nl";
 
-        $message = "Bedankt voor het registreren, klik <a href='www.inlogregistratiesysteem.am1c.nl'>hier</a> om uw account te activeren";
+        $message = '<!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                      <meta charset="UTF-8">
+                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                      <title>Document</title>
+                      <style>
+                        body { 
+                          color : green;
+                        }
+                      </style>
+                    </head>
+                    <body>
+                      <p>Bedankt voor het registreren, klik <a href="www.inlogregistratiesysteem.am1c.nl">hier</a> om uw account te activeren</p>
+                      <p>Met vriendelijke groet,</p>
+                      <p>de beheerder van deze site.</p>
+                    </body>
+                    </html>';
+
+        $headers = "Content-Type: text/html; charset=UTF-8";
 
         // We sturen nu een mailtje
-        mail($email, $subject , $message);
+        mail($email, $subject , $message, $headers);
         // Stuur de gebruiker door naar index.php
         header("Location: ./index.php?status=succes");
       }
