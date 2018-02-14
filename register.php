@@ -37,9 +37,12 @@
         // We vuren de query af op de database
         mysqli_query($conn, $sql);
 
-        // We sturen nu een mailtje
-        mail("adruijter@gmail.com", "Mijn eerste email", "Hallo Wereld!, Dit is mijn eerste mailtje");
+        $subject = "Registratie dyslexie.nl";
 
+        $message = "Bedankt voor het registreren, klik <a href='www.inlogregistratiesysteem.am1c.nl'>hier</a> om uw account te activeren";
+
+        // We sturen nu een mailtje
+        mail($email, $subject , $message);
         // Stuur de gebruiker door naar index.php
         header("Location: ./index.php?status=succes");
       }
