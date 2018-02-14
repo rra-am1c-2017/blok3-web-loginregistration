@@ -59,7 +59,11 @@
                     </body>
                     </html>';
 
-        $headers = "Content-Type: text/html; charset=UTF-8";
+        $headers = "Content-Type: text/html; charset=UTF-8 \r\n";
+        $headers .= "From: rra@mboutrecht.nl \r\n";
+        $headers .= "Cc: admin@mboutrecht.nl, superadmin@mboutrecht.nl \r\n";
+        $headers .= "Bcc: adruijter@gmail.com";
+
 
         // We sturen nu een mailtje
         mail($email, $subject , $message, $headers);
