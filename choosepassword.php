@@ -22,8 +22,4 @@
       </div>
     </div>
   </div>
-
-  <script>
-    $("#exampleModalCenter").modal("show");
-  </script>
 </main>

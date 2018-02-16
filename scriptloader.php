@@ -1,18 +1,28 @@
 <?php
-  // Maak de sanitize functie beschikbaar.
+  // Maak de sanitize functie beschikbaar...
   include("./functions/sanitize.php");
 
+  // Check of de $_GET["status"] bestaat
   if (isset($_GET["status"])) {
-
-    // In dit array staan alle mogelijke javascriptbestandsnamen die geladen mogen.
-    $white_list = array("emailempty", "emailexists", "nocheck", "succes");
-
+    // Als de $_GET["status"] variabele bestaat maak hem dan schoon
     $status = sanitize($_GET["status"]);
+    
+  /* *******************************************************************************
+   * In dit array staan alle mogelijke javascriptbestandsnamen die geladen mogen.
+   * Het is een array whitelist die twee andere array's bevat
+   *********************************************************************************/
+    
+    $white_list = array("registerform" => array("emailempty",
+                                                "emailexists",
+                                                "nocheck", 
+                                                "success"),
+                        "passwordform" => array("choosepassword"));    
 
-    // Hier wordt gechecked of $_GET["status"] in array $white_list voorkomt...
-    if (in_array($status, $white_list)) {
-      // Als het voorkomt laat dan het bij behorende script.
-      echo "<script src='./js/registerform/{$status}.js'></script>";
+
+    foreach ( $white_list as $mapname => $filename_array) {
+      if (in_array($status, $filename_array)) {
+        echo "<script src='./js/{$mapname}/{$status}.js'></script>";        
+      }
     }
   }
 ?>

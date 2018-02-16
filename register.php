@@ -65,7 +65,7 @@
         $headers .= "Bcc: adruijter@gmail.com";
 
 
-        // We sturen nu een mailtje
+        // We sturen nu een ma\r\niltje
         mail($email, $subject , $message, $headers);
         // Stuur de gebruiker door naar index.php
         header("Location: ./index.php?status=succes");
