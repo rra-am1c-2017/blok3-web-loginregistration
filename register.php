@@ -53,7 +53,7 @@
                       </style>
                     </head>
                     <body>
-                      <p>Bedankt voor het registreren, klik <a href="www.inlogregistratiesysteem.am1c.nl/index.php?action=choosepassword">hier</a> om uw account te activeren</p>
+                      <p>Bedankt voor het registreren, klik <a href="www.inlogregistratiesysteem.am1c.nl/index.php?action=choosepassword&status=choosepassword">hier</a> om uw account te activeren</p>
                       <p>Met vriendelijke groet,</p>
                       <p>de beheerder van deze site.</p>
                     </body>

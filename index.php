@@ -7,17 +7,24 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="./css/style.css">
     <title>Inlogregistratiesysteem</title>
   </head>
-  <body> 
-
-     <?php
-      if (isset($_GET["action"])) {
-        include("./" . $_GET["action"] .".php");
-      }      
-     ?>
-    
+  <body>
+    <div class="container-fluid">
+      <a href="http://www.inlogregistratiesysteem.am1c.nl/index.php?action=home">Home</a>
+      <a href="http://www.inlogregistratiesysteem.am1c.nl/index.php?action=registerform">Registreer</a>
+      <a href="http://www.inlogregistratiesysteem.am1c.nl/index.php?action=games">Games</a>
+    </div> 
+    <main class="container">
+      <?php
+        if (isset($_GET["action"])) {
+          include("./" . $_GET["action"] .".php");
+        } else {
+          include("./home.php"  );
+        }   
+      ?>
+    </main>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

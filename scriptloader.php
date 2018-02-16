@@ -9,20 +9,13 @@
     
   /* *******************************************************************************
    * In dit array staan alle mogelijke javascriptbestandsnamen die geladen mogen.
-   * Het is een array whitelist die twee andere array's bevat
+   * Het is een array whitelist 
    *********************************************************************************/
     
-    $white_list = array("registerform" => array("emailempty",
-                                                "emailexists",
-                                                "nocheck", 
-                                                "success"),
-                        "passwordform" => array("choosepassword"));    
+    $white_list = array("emailempty","emailexists","nocheck", "success", "choosepassword");    
 
-
-    foreach ( $white_list as $mapname => $filename_array) {
-      if (in_array($status, $filename_array)) {
-        echo "<script src='./js/{$mapname}/{$status}.js'></script>";        
-      }
+    if (in_array($status, $white_list)) {
+        echo "<script src='./js/registerform/{$status}.js'></script>";
     }
   }
 ?>
