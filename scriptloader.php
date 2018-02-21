@@ -12,7 +12,8 @@
    * Het is een array whitelist 
    *********************************************************************************/
     
-    $white_list = array("emailempty","emailexists","nocheck", "success", "choosepassword");    
+    // echo "Password: " . $password . "<br>";
+    $white_list = array("emailempty","emailexists","nocheck", "success", "choosepassword", "choosepasswordfalse","choosepassword_identical" );    
 
     if (in_array($status, $white_list)) {
         echo "<script src='./js/registerform/{$status}.js'></script>";

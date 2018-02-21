@@ -1,4 +1,4 @@
-<h3>Kies een nieuw password</h3>
+
 
 
 <!-- Modal -->
@@ -8,7 +8,7 @@
 
     <form method="post" action="./activate.php">        
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Kies een nieuw wachtwoord</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -19,7 +19,7 @@
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
           <small id="passwordHelp1" class="form-text text-muted">Voer een veilig wachtwoord in.</small>          
         </div>
-        <div class="form-group">
+        <div class="form-group" id="info">
           <label for="exampleInputPassword2">Password</label>
           <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" name="checkpassword">
           <small id="passwordHelp2" class="form-text text-muted">Voer uw gekozen wachtwoord nogmaals in.</small> 
