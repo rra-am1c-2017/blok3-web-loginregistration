@@ -23,6 +23,8 @@
 
       mysqli_query($conn, $sql);
 
+      header("Location: ./index.php?action=choosepassword&status=activate_success");
+
     } else {
       header("Location: ./index.php?action=choosepassword&status=choosepassword_identical");
     }
