@@ -23,6 +23,7 @@
       //echo $sql; exit();
       mysqli_query($conn, $sql);
 
+      // Stuur door naar index.php en laad choosepassword in de body van index.php
       header("Location: ./index.php?action=choosepassword&status=activate_success");
 
     } else {
