@@ -26,9 +26,7 @@
             <div class="form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1" name="conditions">
               <label id="lblcheck" class="form-check-label" for="exampleCheck1">Ik ga akkoord met de algemene voorwaarden</label>
-            </div>
-            
-          
+            </div>          
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Verzend</button>

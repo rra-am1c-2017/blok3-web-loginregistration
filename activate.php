@@ -4,6 +4,7 @@
 
   $password = sanitize($_POST["password"]);
   $checkpassword = sanitize($_POST["checkpassword"]);
+  $id            = sanitize($_POST["id"]);
 
   // Check op de beide wachtwoordvelden zijn ingevuld met empty() en een if else
   if (!empty($password) && !empty($checkpassword)) {
@@ -13,8 +14,15 @@
 
       // Wegschrijven naar de database
       include("./db_connect.php");
-      $test = "banaan";
-      echo "Dit is het gehashte password: " . password_hash($test, PASSWORD_BCRYPT); exit();
+
+      $password_hash = password_hash($password, PASSWORD_BCRYPT);
+
+      $sql = "UPDATE `login` SET `password`  = '{$password_hash}',
+                                 `activated` = 'yes'
+                           WHERE `id` = " . $id;
+
+      mysqli_query($conn, $sql);
+
     } else {
       header("Location: ./index.php?action=choosepassword&status=choosepassword_identical");
     }

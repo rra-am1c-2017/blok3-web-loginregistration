@@ -41,6 +41,9 @@
         // We vuren de query af op de database
         mysqli_query($conn, $sql);
 
+        // Haal het aangemaakt id (autonummering) op uit de database
+        $id = mysqli_insert_id($conn);
+
         $subject = "Registratie dyslexie.nl";
 
         $message = '<!DOCTYPE html>
@@ -57,7 +60,7 @@
                       </style>
                     </head>
                     <body>
-                      <p>Bedankt voor het registreren, klik <a href="www.inlogregistratiesysteem.am1c.nl/index.php?action=choosepassword&status=choosepassword">hier</a> om uw account te activeren</p>
+                      <p>Bedankt voor het registreren, klik <a href="www.inlogregistratiesysteem.am1c.nl/index.php?action=choosepassword&status=choosepassword&id=' . $id . '">hier</a> om uw account te activeren</p>
                       <p>Met vriendelijke groet,</p>
                       <p>de beheerder van deze site.</p>
                     </body>
@@ -69,10 +72,10 @@
         $headers .= "Bcc: adruijter@gmail.com";
 
 
-        // We sturen nu een ma\r\niltje
+        // We sturen nu een mailtje
         mail($email, $subject , $message, $headers);
         // Stuur de gebruiker door naar index.php
-        header("Location: ./index.php?status=succes");
+        header("Location: ./index.php?action=registerform&status=success");
       }
     } else {
       header("Location: ./index.php?status=nocheck");

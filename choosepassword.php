@@ -24,6 +24,7 @@
           <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" name="checkpassword">
           <small id="passwordHelp2" class="form-text text-muted">Voer uw gekozen wachtwoord nogmaals in.</small> 
         </div>
+        <input type="hidden" name="id" value="<?php echo $_GET["id"]; ?>">
       </div>
       <div class="modal-footer">
        <button type="submit" class="btn btn-primary">Verzend</button>        
