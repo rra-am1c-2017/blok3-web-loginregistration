@@ -5,7 +5,7 @@
   include("./db_connect.php");
   include("./functions/sanitize.php");
   if (empty($_POST["email"])) {
-    header("Location: ./index.php?status=emailempty");
+    header("Location: ./index.php?action=registerform&status=emailempty");
   } else {
 
     if (isset($_POST["conditions"])) {
@@ -22,7 +22,7 @@
       // Test of het aantal geselecteerde rijen 0 (false) of 1(true)
       if (mysqli_num_rows($result)) {
         // Het emailadres bestaat al in database
-        header("Location: ./index.php?status=emailexists");
+        header("Location: ./index.php?action=registerform&status=emailexists");
       } else {    
         // We maken onze query voor het inserten van de formuliergegevens.
         $sql = "INSERT INTO `login` (`id`,
@@ -78,7 +78,7 @@
         header("Location: ./index.php?action=registerform&status=success");
       }
     } else {
-      header("Location: ./index.php?status=nocheck");
+      header("Location: ./index.php?action=registerform&status=nocheck");
   }  
 } 
 ?>
