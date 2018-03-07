@@ -12,9 +12,7 @@
   </head>
   <body>
     <div class="container-fluid">
-      <a href="http://www.inlogregistratiesysteem.am1c.nl/index.php?action=home">Home</a>
-      <a href="http://www.inlogregistratiesysteem.am1c.nl/index.php?action=registerform">Registreer</a>
-      <a href="http://www.inlogregistratiesysteem.am1c.nl/index.php?action=games">Games</a>
+      <?php include("./navigation.php"); ?>
     </div> 
     <main class="container">
       <?php
