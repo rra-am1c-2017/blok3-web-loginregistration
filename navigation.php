@@ -1,5 +1,4 @@
-<?php
-  
+<?php  
   if (isset($_SESSION["id"])) {
 
     switch($_SESSION["userrole"]) {
