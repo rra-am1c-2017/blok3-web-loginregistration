@@ -23,7 +23,14 @@
       if (password_verify($password, $record["password"])) {
         // loginprocedure
 
-        switch ($_record["userrole"]) {
+        session_start();
+
+        $_SESSION["id"] = $record["id"];
+        $_SESSION["email"] = $record["email"];
+        $_SESSION["userrole"] = $record["userrole"];
+        
+
+        switch ($record["userrole"]) {
           case "subscriber":
             header("Location: ./index.php?action=subscriber_home");
             break;
