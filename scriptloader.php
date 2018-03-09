@@ -13,7 +13,7 @@
    *********************************************************************************/
     
     // echo "Password: " . $password . "<br>";
-    $white_list = array("emailempty","emailexists","nocheck", "success", "choosepassword", "choosepasswordfalse","choosepassword_identical", "activate_success", "register", "login", "emptyfields" );    
+    $white_list = array("emailempty","emailexists","nocheck", "success", "choosepassword", "choosepasswordfalse","choosepassword_identical", "activate_success", "register", "login", "emptyfields", "accessdenied" );    
 
     if (in_array($status, $white_list)) {
         echo "<script src='./js/registerform/{$status}.js'></script>";

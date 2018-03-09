@@ -18,9 +18,36 @@
     $result = mysqli_query($conn, $sql);
     
     if (mysqli_num_rows($result)) {
-      echo "gevonden";
+      $record = mysqli_fetch_array($result);
+
+      if (password_verify($password, $record["password"])) {
+        // loginprocedure
+
+        switch ($_record["userrole"]) {
+          case "subscriber":
+            header("Location: ./index.php?action=subscriber_home");
+            break;
+          case "administrator":
+            header("Location: ./index.php?action=administrator_home");
+            break;
+          case "superadmin":
+            header("Location: ./index.php?action=superadmin_home");
+            break;
+          default:
+            header("Location: ./index.php?action=home");
+            break;
+        }
+
+
+
+
+
+      } else {
+        header("Location: ./index.php?action=loginform&status=accessdenied");        
+      }
+      
     } else {
-      echo "niets gevonden";
+      header("Location: ./index.php?action=loginform&status=accessdenied");      
     }
   } else {
     header("Location: ./index.php?action=loginform&status=emptyfields");
