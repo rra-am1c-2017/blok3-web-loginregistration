@@ -24,12 +24,3 @@
     echo '<a href="./index.php?action=loginform&amp;status=login">Inloggen</a> ';
   }
 ?>
-
-
-
-
-
-
-
-
-    
