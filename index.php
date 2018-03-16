@@ -16,7 +16,7 @@
       <?php include("./navigation.php"); ?>
     </div> 
     <main class="container">
-      <?php
+      <?php        
         if (isset($_GET["action"])) {
           include("./" . $_GET["action"] .".php");
         } else {

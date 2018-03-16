@@ -20,6 +20,8 @@
     if (mysqli_num_rows($result)) {
       $record = mysqli_fetch_array($result);
 
+      //echo $record["password"]; exit();
+
       if (password_verify($password, $record["password"])) {
         // loginprocedure
 
@@ -28,6 +30,7 @@
         $_SESSION["id"] = $record["id"];
         $_SESSION["email"] = $record["email"];
         $_SESSION["userrole"] = $record["userrole"];
+        $_SESSION["activated"] = $record["activated"];
         
 
         switch ($record["userrole"]) {

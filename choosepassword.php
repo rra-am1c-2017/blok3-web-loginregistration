@@ -1,4 +1,22 @@
+<?php
+  
+  include("./db_connect.php");
+ 
+  if (isset($_GET["id"])) {
 
+   $sql = "SELECT * FROM `login` WHERE `id` = {$_GET["id"]}";
+
+   $result = mysqli_query($conn, $sql);
+
+   $record = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+   if ( !strcmp($record["activated"], "yes")) {
+      header("Location: ./index.php?action=home");
+      exit();
+   }
+  }
+
+?>
 
 
 <!-- Modal -->

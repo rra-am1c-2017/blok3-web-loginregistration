@@ -10,6 +10,7 @@
         break;
       case "superadmin":
         echo '<a href="./index.php?action=superadmin_home">Home</a> ';
+        echo '<a href="./index.php?action=administrator_home">Administrator Home</a> ';        
         break;
       default:
         header("Location: ./index.php?action=home");
